@@ -43,7 +43,9 @@ INSTALLED_APPS = [
     "apps.inventory",
     "apps.hospitals",
     "apps.compilance",
-    "apps.auth_system"
+    "apps.auth_system",
+    # Django REST Framework
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +133,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #Auth model
 AUTH_USER_MODEL = 'auth_system.User'
 
+#Rest Framework
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}
