@@ -1,0 +1,102 @@
+# Project Title
+
+A comprehensive Django backend application for managing hospitals, warehouses, inventories, orders, user roles, and monthly compliance tracking. The project is structured with scalability and modularity in mind, integrating JWT authentication and adhering to REST API standards.
+
+## 🚀 Features
+- User authentication and authorization using JWT.
+- CRUD operations for Hospitals, Warehouses, Inventory, Orders, Patients and Monthly Compliance.
+- Secure login and logout with token management.
+- Custom role-based user management.
+- Data tracking and compliance monitoring.
+
+---
+
+## 🛠️ Technologies Used
+- **Django REST Framework** - For building REST APIs.
+- **Simple JWT** - For authentication and token management.
+- **Factory Boy & Faker** - For generating test data.
+- **CORS Headers** - For frontend-backend communication.
+
+---
+
+## ✅ Installation
+1. **Clone the repository:**
+```bash
+https://github.com/yourusername/your-repo.git
+cd your-repo
+```
+
+2. **Create a virtual environment and activate it:**
+```bash
+python -m venv env
+source env/bin/activate  # On Windows: env\Scripts\activate
+```
+
+3. **Install the dependencies:**
+```bash
+pip install -r requirements.txt
+```
+
+4. **Apply migrations:**
+```bash
+python manage.py migrate
+```
+
+5. **Create a superuser:**
+```bash
+python manage.py createsuperuser
+```
+
+6. **Run the server:**
+```bash
+python manage.py runserver
+```
+
+---
+
+## 📦 API Endpoints
+**Authentication:**
+- `POST /api/v1/auth/login/` - Obtain JWT token.
+- `POST /api/v1/auth/token/refresh/` - Refresh JWT token.
+- `POST /api/v1/auth/logout/` - Logout user.
+
+**Hospitals & Warehouses:**
+- `GET /api/v1/hospitals/` - List all hospitals.
+- `GET /api/v1/warehouses/` - List all warehouses.
+
+**Inventory:**
+- `GET /api/v1/inventory/` - List all inventory items.
+
+**Orders:**
+- `GET /api/v1/orders/` - List all orders.
+- `GET /api/v1/orders/warehouse/<warehouse_id>/` - Orders by warehouse.
+
+**Compliance:**
+- `GET /api/v1/compliance/` - List monthly compliance records.
+
+---
+
+## 🧪 Testing
+- To generate test data:
+```bash
+python manage.py runscript data_loader
+```
+
+- To run tests:
+```bash
+python manage.py test
+```
+
+---
+
+## 🤝 Contribution
+- Fork the repository.
+- Create a new branch (`git checkout -b feature/your-feature`)
+- Commit your changes (`git commit -m 'Add your feature'`)
+- Push to the branch (`git push origin feature/your-feature`)
+- Open a Pull Request
+
+---
+
+## 📄 License
+This project is licensed under the MIT License.
